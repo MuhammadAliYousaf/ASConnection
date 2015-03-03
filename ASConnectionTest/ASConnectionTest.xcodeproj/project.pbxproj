@@ -14,6 +14,7 @@
 		56095F0F1AA5B6150011D6B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56095F0E1AA5B6150011D6B1 /* Images.xcassets */; };
 		56095F121AA5B6150011D6B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56095F101AA5B6150011D6B1 /* LaunchScreen.xib */; };
 		56095F1E1AA5B6150011D6B1 /* ASConnectionTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56095F1D1AA5B6150011D6B1 /* ASConnectionTestTests.m */; };
+		568F33781AA5BC00009DFB33 /* ASConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 568F33771AA5BC00009DFB33 /* ASConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		56095F171AA5B6150011D6B1 /* ASConnectionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASConnectionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56095F1C1AA5B6150011D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56095F1D1AA5B6150011D6B1 /* ASConnectionTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASConnectionTestTests.m; sourceTree = "<group>"; };
+		568F33761AA5BC00009DFB33 /* ASConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASConnection.h; sourceTree = "<group>"; };
+		568F33771AA5BC00009DFB33 /* ASConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		56095F001AA5B6150011D6B1 /* ASConnectionTest */ = {
 			isa = PBXGroup;
 			children = (
+				568F33751AA5BC00009DFB33 /* Library */,
 				56095F051AA5B6150011D6B1 /* AppDelegate.h */,
 				56095F061AA5B6150011D6B1 /* AppDelegate.m */,
 				56095F081AA5B6150011D6B1 /* ViewController.h */,
@@ -117,6 +121,16 @@
 				56095F1C1AA5B6150011D6B1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		568F33751AA5BC00009DFB33 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				568F33761AA5BC00009DFB33 /* ASConnection.h */,
+				568F33771AA5BC00009DFB33 /* ASConnection.m */,
+			);
+			name = Library;
+			path = ../../Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56095F0A1AA5B6150011D6B1 /* ViewController.m in Sources */,
+				568F33781AA5BC00009DFB33 /* ASConnection.m in Sources */,
 				56095F071AA5B6150011D6B1 /* AppDelegate.m in Sources */,
 				56095F041AA5B6150011D6B1 /* main.m in Sources */,
 			);
@@ -414,6 +429,7 @@
 				56095F231AA5B6150011D6B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56095F241AA5B6150011D6B1 /* Build configuration list for PBXNativeTarget "ASConnectionTestTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +438,7 @@
 				56095F261AA5B6150011D6B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
