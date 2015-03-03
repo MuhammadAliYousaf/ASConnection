@@ -1,7 +1,11 @@
 #import <Foundation/Foundation.h>
 
+#define kHttpMethod_Post @"POST"
+#define kHttpMethod_Get @"GET"
+#define kHttpMethod_Delete @"DELETE"
+
 @class ASConnection;
-@protocol EMConnectionDelegate <NSObject>
+@protocol ASConnectionDelegate <NSObject>
 
 //This method is called when data is received
 - (void)connection:(ASConnection *)connection didReceiveData:(NSData *)data;
@@ -19,7 +23,7 @@
     //request of http
     NSMutableURLRequest *request;
     //instance of ConnectionDelegate 
-    id <EMConnectionDelegate> delegate;
+    id <ASConnectionDelegate> delegate;
     //if connectin is present then its value will be YES other wise NO we can check 
     //status of our connection
     BOOL activeConnection;
@@ -28,20 +32,20 @@
     //data in response of http request
     NSMutableData *responseData;
     
-    NSString *tagString;
+    NSDictionary *userInfo;
 }
 
 @property (nonatomic, strong) NSString *urlOfConnection;
 @property (nonatomic, strong) NSMutableURLRequest *request;
-@property (nonatomic, strong) id <EMConnectionDelegate> delegate;
+@property (nonatomic, strong) id <ASConnectionDelegate> delegate;
 @property (nonatomic, assign) BOOL activeConnection;
 @property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *responseData;
-@property (nonatomic, strong) NSString *tagString;
+@property (nonatomic, strong) NSDictionary *userInfo;
 
 //@param url tell the host address
 //@param connectiondelegate will tell him that which will implement Connection delegate 
-- (id)initWithUrl:(NSString *) url delegate:(id <EMConnectionDelegate>) connectionDelegate;
+- (id)initWithUrl:(NSString *) url delegate:(id <ASConnectionDelegate>) connectionDelegate;
 
 //This method will send http request if there is no connection present
 //@param method will tell type of http request for example GET, POST, DELETE ......

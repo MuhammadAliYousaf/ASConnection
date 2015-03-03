@@ -3,9 +3,9 @@
 
 @implementation ASConnection
 
-@synthesize urlOfConnection, request, delegate, activeConnection, connection, responseData, tagString;
+@synthesize urlOfConnection, request, delegate, activeConnection, connection, responseData, userInfo;
 
-- (id)initWithUrl:(NSString *) url delegate:(id<EMConnectionDelegate>) connectionDelegate {
+- (id)initWithUrl:(NSString *) url delegate:(id<ASConnectionDelegate>) connectionDelegate {
     self = [super init];
     if(self != nil) {
         self.responseData = [[NSMutableData alloc] init];
@@ -43,7 +43,7 @@
         [request setValue:@"text/plain" forHTTPHeaderField:@"Content-type"];
     }
         
-    [self.request setValue:[NSString stringWithFormat:@"%d", [requestData length]] 
+    [self.request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[requestData length]] 
      forHTTPHeaderField:@"Content-length"];
     
     [self.request setHTTPBody:requestData];
